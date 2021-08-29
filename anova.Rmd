@@ -1,0 +1,20 @@
+---
+title: "ANOVA"
+output: html_notebook
+---
+
+# Analysis of Variance (ANOVA)
+
+ANOVA, also Analysis of Variance: a common approach to **testing a hypothesis with 2 or more groups**. One-way ANOVA, can be considered an extension of the t-test whenever more than 2 groups are being tested.  
+  
+The factor, or categorical variable, is often referred to as the 'treatment' in the ANOVA setting.  
+  
+ANOVA involves partiitioning the data's total variation into variation between and within groups. This procedure is known as Analysis of Variance as sources of variation are examined serparately. 
+
+The data is still assumed to be normally distributed with mean and standard deviation. Stating the hypothesis is also similar to previous examples when there were only two samples of interest. 
+```{r}
+library(ggplot2)
+install.packages("car")
+library(car)
+```
+
