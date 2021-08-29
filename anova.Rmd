@@ -11,10 +11,32 @@ The factor, or categorical variable, is often referred to as the 'treatment' in 
   
 ANOVA involves partiitioning the data's total variation into variation between and within groups. This procedure is known as Analysis of Variance as sources of variation are examined serparately. 
 
-The data is still assumed to be normally distributed with mean and standard deviation. Stating the hypothesis is also similar to previous examples when there were only two samples of interest. 
+The data is still assumed to be normally distributed with mean and standard deviation. Stating the hypothesis is also similar to previous examples when there were only two samples of interest.  
+
+  
+Consider an experiment designed to test yields from a control and two different treatments. The returns of each group are collected, and the dry weights of the plants are measured. Is there a difference in the means of the treatments?  
+
+  
+There is no reason to assume there is a difference between the control and the two treatments.  
+
 ```{r}
 library(ggplot2)
-install.packages("car")
+#install.packages("car")
 library(car)
+
+data("PlantGrowth")
+
+``` 
+
+A histogram and Q-Q plot can be plotted to check for normality in the data.  
+
+```{r}
+ggplot(PlantGrowth, aes(weight)) +
+  geom_density(aes(data=weight, fill=group), position='identity', alpha=0.5) +
+                 labs(x="Weight", y="Density")+ scale_fill_discrete(name='Group') +
+                 scale_x_continuous(limits=c(2,8))
 ```
 
+```{r}
+qqPlot(PlantGrowth$weight, col=PlantGrowth$group)
+```
