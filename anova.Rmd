@@ -37,6 +37,16 @@ ggplot(PlantGrowth, aes(weight)) +
                  scale_x_continuous(limits=c(2,8))
 ```
 
+**The histogram shows the data have an approximate bell shape and from first glance, it does appear there are differences in the treatments.** 
+
 ```{r}
 qqPlot(PlantGrowth$weight, col=PlantGrowth$group)
 ```
+
+**The Q-Q plot provides further evidence of normality as most of the points fall on the line.**
+
+---
+
+## ANOVA in R    
+
+Analysis of Vaiance is used on models, typically the linear regression model.
